@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { useSelector, useDispatch } from 'react-redux'
+import { signIn, signOut } from './actions';
+import Counter from './Component/Counter';
 
 function App() {
+  const isLogged = useSelector(state => state.isLogged)
+  const dispatch = useDispatch()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello USER, Wellcome!!</h1>
+      { isLogged ? <Counter/> : <h2>Sign In to use Counter</h2> }
+      <div>
+        { isLogged ?
+          <button onClick={() => dispatch(signOut())}>Sign-out</button>:
+          <button onClick={() => dispatch(signIn())}>Sign-in</button>
+        }
+      </div>
     </div>
   );
 }
