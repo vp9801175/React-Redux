@@ -23,15 +23,3 @@ export const decrementByNumber = (number) => {
         payload: parseInt(number)
     }
 }
-
-export const signIn = () => {
-    return {
-        type: "SIGN_IN",
-    }
-}
-
-export const signOut = () => {
-    return {
-        type: "SIGN_OUT",
-    }
-}

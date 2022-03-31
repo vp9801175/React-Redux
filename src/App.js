@@ -1,6 +1,6 @@
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux'
-import { signIn, signOut } from './actions';
+import { signIn, signOut } from './actions/isLogged';
 import Counter from './Component/Counter';
 
 function App() {

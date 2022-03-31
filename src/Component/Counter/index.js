@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import { increment, incrementByNumber,decrement,decrementByNumber } from "../../actions";
+import { increment, incrementByNumber,decrement,decrementByNumber } from "../../actions/counter";
 
 const Counter = () => {
 
